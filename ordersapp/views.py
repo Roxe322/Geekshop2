@@ -1,5 +1,7 @@
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, HttpResponseRedirect
+from django.utils.decorators import method_decorator
 
 from basketapp.models import Basket
 from mainapp.models import Product
@@ -22,6 +24,10 @@ class OrderList(ListView):
 
     def get_queryset(self):
         return Order.objects.filter(user=self.request.user)
+
+    @method_decorator(login_required())
+    def dispatch(self, request, *args, **kwargs):
+        return super(OrderList, self).dispatch(*args, **kwargs)
 
 
 class OrderItemsCreate(CreateView):
