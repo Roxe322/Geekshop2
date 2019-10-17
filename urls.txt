@@ -1,10 +1,12 @@
 http://192.168.1.137/
+http://192.168.1.137/auth/login/ POST username=django&password=geekbrains
 http://192.168.1.137/products/
 http://192.168.1.137/contact/
-http://192.168.1.137/products/category/1/
+http://192.168.1.137/products/category/0/
 http://192.168.1.137/products/category/2/
 http://192.168.1.137/products/category/3/
 http://192.168.1.137/products/category/4/
 http://192.168.1.137/basket/
 http://192.168.1.137/order/
 http://192.168.1.137/auth/edit/
+http://192.168.1.137/order/read/2/
