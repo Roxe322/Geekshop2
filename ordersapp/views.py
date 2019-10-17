@@ -27,7 +27,7 @@ class OrderList(ListView):
 
     @method_decorator(login_required())
     def dispatch(self, request, *args, **kwargs):
-        return super(OrderList, self).dispatch(*args, **kwargs)
+        return super(OrderList, self).dispatch(request, *args, **kwargs)
 
 
 class OrderItemsCreate(CreateView):
