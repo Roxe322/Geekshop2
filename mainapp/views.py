@@ -116,7 +116,6 @@ def main(request):
     return render(request, 'mainapp/index.html', content)
 
 
-@never_cache
 def products(request, pk=None, page=1):
     title = 'продукты'
     links_menu = get_links_menu()
@@ -162,7 +161,7 @@ def products(request, pk=None, page=1):
     return render(request, 'mainapp/products.html', content)
 
 
-@never_cache
+
 def product(request, pk):
     title = 'продукты'
     links_menu = get_links_menu()
