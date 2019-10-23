@@ -10,7 +10,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from django.conf import settings
 from django.core.cache import cache
-from django.views.decorators.cache import cache_page
+from django.views.decorators.cache import cache_page, never_cache
 JSON_PATH = 'mainapp/json'
 
 
@@ -116,6 +116,7 @@ def main(request):
     return render(request, 'mainapp/index.html', content)
 
 
+@never_cache
 def products(request, pk=None, page=1):
     title = 'продукты'
     links_menu = get_links_menu()
@@ -161,6 +162,7 @@ def products(request, pk=None, page=1):
     return render(request, 'mainapp/products.html', content)
 
 
+@never_cache
 def product(request, pk):
     title = 'продукты'
     links_menu = get_links_menu()
